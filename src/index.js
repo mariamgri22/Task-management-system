@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import BoardState from './context/board/BoardState';
+import AlertState from './context/alert/AlertState';
+import UserState from './context/user/UserState';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+       <BoardState>
+      <AlertState>
+        <UserState>
+          <App />
+        </UserState>
+      </AlertState>
+    </BoardState>
   </React.StrictMode>,
   document.getElementById('root')
 );
